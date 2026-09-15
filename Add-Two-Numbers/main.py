@@ -5,7 +5,7 @@ numero2 = int(input("Escribe el segundo número: "))
 resultado = numero1 + numero2
 print("Suma:", resultado)
 
-# Retos extra (después de la tarea base, para no romper la calificación automática)
+# Retos extra 
 numero3 = int(input("Escribe un tercer número: "))
 
 resta = numero1 - numero2
