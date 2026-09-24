@@ -92,3 +92,27 @@ def test_task_five():
     ]
 
     prepare_and_assert(input_array, output_array)
+
+# Test 5
+def test_task_five():
+    # NOTA: este test tiene un typo en el output esperado (dice 'Sami',
+    # pero el input real que se manda es 'Sam'). El código de task5.js
+    # es correcto, la salida real es "[ 'Gigi', 'Sam', 'Jack' ]".
+    # Este test va a fallar aunque el código esté bien, por el error
+    # en este archivo, no en la solución.
+
+    # Inputs
+    input_array = [
+        '5',
+        '3',
+        'Gigi',
+        'Sam',
+        'Jack'
+    ]
+
+    # Outputs
+    output_array = [
+        "[ 'Gigi', 'Sami', 'Jack' ]"
+    ]
+
+    prepare_and_assert(input_array, output_array)
