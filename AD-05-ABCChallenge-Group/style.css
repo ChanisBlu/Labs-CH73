@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+}
+
+/* Requerimiento: Make h3 color green */
+h3 {
+  color: #00ff66; /* Un verde más brillante y fácil de leer */
+  font-weight: bold;
+}
+
+/* Requerimiento: Make a class to apply the color blue to three h3 */
+.blue-text {
+  color: blue;
+}
+
+/* Requerimiento: Make one h3 color red */
+.red-text {
+  color: red;
+}
