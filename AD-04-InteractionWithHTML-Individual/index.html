@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Burger Town</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Tarea 2: console.log al hacer clic en "Burger Town!" -->
+  <h1 onclick="logBurgerTown()"> Burger Town!</h1>
+
+  <p>Welcome to burger town! We love BURGERS! </p>
+  <br>
+  <p>Its not just a sandwich, its a BURGER!</p>
+
+  <h2 onclick="logBurgerTown()"> Burger Town!</h2>
+  
+  <!-- Identificador id="burger-headline" agregado para la Tarea 4 -->
+  <h2 id="burger-headline">A picture of a BURGER!</h2>
+
+  <!-- Tarea 3: Imagen del archivo SVG debajo del titular -->
+  <img src="Burger4.svg" alt="Burger" width="300">
+
+  <p>Here is a list of BURGERS!</p>
+  <ul>
+    <li>BURGER!</li>
+    <li>BURGERS!</li>
+    <li>BURGERz!</li>
+    <!-- Tarea 4: Evento onclick en los elementos que contienen la palabra "RICE!!" -->
+    <li>BURGER with <span onclick="turnRed()" style="cursor: pointer;">RICE!!</span></li>
+    <li>BURGERz with MORE <span onclick="turnRed()" style="cursor: pointer;">RICE!!</span></li>
+    <li>BURGERz with Chesse and <span onclick="turnRed()" style="cursor: pointer;">RICE!!</span></li>
+    <li>BURGERz but its only <span onclick="turnRed()" style="cursor: pointer;">RICE!!</span></li>
+  </ul>
+
+  <h2 onclick="logBurgerTown()"> Burger Town!</h2>
+  
+  <!-- Tarea 1: Atributo onclick para lanzar la alerta -->
+  <h3 onclick="alert('ITS BURGERTIME')" style="cursor: pointer;">COME TO BURGER TOWN!</h3>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
