@@ -1,0 +1,495 @@
+/* Chanis FX - AD-07 Lab del Sitio del Blog
+   Paleta sacada de la propia obra (negro, hueso, piedra, rojo oxido, azul hielo).
+   Tipografia: Libre Baskerville para titulos, Google Sans Flex para texto.
+   Un solo archivo de estilos para las 3 paginas, como pide la tarea. */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Google+Sans+Flex:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --negro: #121212;
+  --negro-suave: #1b1a19;
+  --hueso: #ece7df;
+  --piedra: #9a9284;
+  --piedra-clara: #c9c2b4;
+  --rojo: #7a2420;
+  --azul-hielo: #7fa0b8;
+  --borde: #322f2b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Google Sans Flex', Arial, sans-serif;
+  color: var(--hueso);
+  background: var(--negro);
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- NAV (siempre visible, en todas las paginas) ---------- */
+
+header.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(18, 18, 18, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.nav-bar .logo {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--hueso);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.nav-bar .logo span {
+  color: var(--rojo);
+}
+
+.nav-bar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 34px;
+}
+
+.nav-bar nav a {
+  color: var(--piedra-clara);
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  padding: 6px 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.nav-bar nav a:hover,
+.nav-bar nav a.activo {
+  color: var(--hueso);
+  border-bottom: 1px solid var(--rojo);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--hueso);
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ---------- CONTENIDO GENERAL ---------- */
+
+main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 60px 24px 90px;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 50px 0 70px;
+  border-bottom: 1px solid var(--borde);
+  margin-bottom: 60px;
+}
+
+.hero-con-fondo {
+  padding: 110px 24px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-image: url('images/obras/triptico-jom.jpg');
+  background-size: cover;
+  background-position: center 30%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18,18,18,0.88) 0%, rgba(18,18,18,0.7) 55%, rgba(18,18,18,0.92) 100%);
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 16px;
+  color: var(--hueso);
+}
+
+.hero p.subtitulo {
+  font-size: 18px;
+  color: var(--piedra-clara);
+  max-width: 620px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.hero h4 {
+  font-family: 'Google Sans Flex', Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--azul-hielo);
+  margin-bottom: 18px;
+}
+
+/* ---------- GALERIA DE OBRAS ---------- */
+
+.aviso-contenido {
+  text-align: center;
+  color: var(--piedra);
+  font-size: 14px;
+  max-width: 620px;
+  margin: 0 auto 50px;
+  padding: 14px 20px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 80px;
+}
+
+.obra {
+  background: var(--negro-suave);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.obra img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  filter: contrast(1.06) saturate(0.95);
+}
+
+.galeria-tatuajes .obra img {
+  height: 260px;
+  object-fit: contain;
+  background: var(--negro);
+  padding: 10px;
+}
+
+.obra .info {
+  padding: 18px 20px 22px;
+}
+
+.obra h3 {
+  font-size: 19px;
+  color: var(--hueso);
+  margin-bottom: 4px;
+}
+
+.obra .tecnica {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--azul-hielo);
+  margin-bottom: 10px;
+}
+
+.obra p {
+  font-size: 14px;
+  color: var(--piedra-clara);
+}
+
+.seccion-titulo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.seccion-titulo h2 {
+  font-size: 32px;
+  color: var(--hueso);
+  margin-bottom: 10px;
+}
+
+.seccion-titulo p {
+  color: var(--piedra);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- PROCESO (franja destacada) ---------- */
+
+.proceso {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: var(--negro-suave);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.proceso.invertida {
+  flex-direction: row-reverse;
+}
+
+.proceso img {
+  flex: 1;
+  border-radius: 6px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.proceso .texto {
+  flex: 1;
+}
+
+.proceso h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--hueso);
+}
+
+.proceso p {
+  color: var(--piedra-clara);
+  margin-bottom: 10px;
+}
+
+/* ---------- PAGINAS INTERNAS (quienes somos / contacto) ---------- */
+
+.pagina-interna h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.pagina-interna .subtitulo {
+  color: var(--azul-hielo);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.pagina-interna p {
+  color: var(--piedra-clara);
+  margin-bottom: 16px;
+  max-width: 750px;
+}
+
+.bio {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.bio img {
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid var(--borde);
+  flex-shrink: 0;
+}
+
+.bio .texto {
+  flex: 1;
+}
+
+.tarjetas {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.tarjeta {
+  background: var(--negro-suave);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 24px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.tarjeta h3 {
+  color: var(--rojo);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.tarjeta p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* ---------- CONTACTO ---------- */
+
+.contacto-grid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.contacto-info,
+.contacto-form {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contacto-info ul {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.contacto-info li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--borde);
+  color: var(--piedra-clara);
+}
+
+.contacto-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  background: var(--negro-suave);
+  color: var(--hueso);
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
+  color: var(--piedra);
+}
+
+.contacto-form button {
+  background: var(--rojo);
+  color: var(--hueso);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
+  font-family: 'Google Sans Flex', Arial, sans-serif;
+}
+
+.contacto-form button:hover {
+  background: #93312c;
+}
+
+#mensaje-envio {
+  margin-top: 10px;
+  color: var(--azul-hielo);
+  font-weight: 600;
+  min-height: 20px;
+}
+
+/* ---------- FOOTER (presente en todas las paginas) ---------- */
+
+footer.pie {
+  background: var(--negro-suave);
+  border-top: 1px solid var(--borde);
+  color: var(--piedra);
+  padding: 36px 24px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer.pie .pie-proyecto {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  color: var(--hueso);
+  font-size: 17px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+footer.pie a {
+  color: var(--azul-hielo);
+  text-decoration: none;
+}
+
+/* ---------- RESPONSIVO ---------- */
+
+@media (max-width: 900px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-bar nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--negro);
+    border-bottom: 1px solid var(--borde);
+    display: none;
+  }
+
+  .nav-bar nav.abierto {
+    display: block;
+  }
+
+  .nav-bar nav ul {
+    flex-direction: column;
+    padding: 16px 40px 24px;
+    gap: 16px;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .proceso,
+  .proceso.invertida,
+  .bio {
+    flex-direction: column;
+  }
+
+  .bio img {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+}

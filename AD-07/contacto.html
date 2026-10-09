@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto: Chanis FX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav-bar">
+    <a href="index.html" class="logo">Chanis<span>FX</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">&#9776;</button>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pagina-interna">
+    <h1>Contacto</h1>
+    <p class="subtitulo">Comisiones, dudas o solo platicar de arte</p>
+    <p>Si te interesa una pieza, quieres encargar un trabajo o nada más comentar sobre alguna obra, aquí tienes las formas de encontrarme. Todos los datos de esta página son de ejemplo para fines del laboratorio.</p>
+
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <h2>Datos de contacto</h2>
+        <ul>
+          <li>Correo: isaacrazo000@gmail.com</li>
+          <li>Ciudad: Ciudad de México, México</li>
+          <li>Horario de respuesta: lunes a viernes, 6:00 p. m. a 9:00 p. m.</li>
+        </ul>
+      </div>
+
+      <div class="contacto-form">
+        <h2>Envía un mensaje</h2>
+        <form id="formContacto">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="email" name="correo" placeholder="Tu correo" required>
+          <textarea name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto o duda" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+        <p id="mensaje-envio"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p class="pie-proyecto">Chanis FX</p>
+    <p>Autor: Isaac Razo Soto</p>
+    <p>Contacto: <a href="mailto:isaacrazo000@gmail.com">isaacrazo000@gmail.com</a></p>
+    <p>Proyecto AD-07: El Sitio del Blog, Lab individual de programación</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
