@@ -1,0 +1,20 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* Solo para que se vean las columnas de la rejilla */
+.caja {
+  padding: 1rem 0.5rem;
+  border: 1px solid #adb5bd;
+  border-radius: 0.375rem;
+  overflow-wrap: anywhere; /* evita que una palabra larga se salga de la columna */
+}
+
+/* En celular las columnas de 2 son muy angostas: letra más chica */
+@media (max-width: 576px) {
+  .caja {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.25rem;
+  }
+}

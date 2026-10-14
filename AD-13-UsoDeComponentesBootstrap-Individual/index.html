@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AD-13 Uso de Componentes Bootstrap</title>
+  <!-- Tarea 1: CSS de Bootstrap con CDN, dentro del head -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <!-- Tarea 5: barra de navegación con inicio e index2 -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AD-13</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index2.html">index2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+
+    <!-- Tarea 2: botón que muestra una alerta que se puede cerrar -->
+    <h2 class="h4">Alertas</h2>
+    <div id="contenedorAlertas"></div>
+    <button type="button" class="btn btn-primary" id="elBoton">El Botón</button>
+
+    <hr class="my-4">
+
+    <!-- Tarea 3: rejilla. Contenedor con flexbox, dos filas -->
+    <h2 class="h4">Rejilla</h2>
+    <div class="container d-flex flex-column gap-3 text-center">
+      <!-- Fila 1: 2 + 8 + 2 = 12 unidades -->
+      <div class="row g-2">
+        <div class="col-2"><div class="caja">el lado izquierdo</div></div>
+        <div class="col-8"><div class="caja">el lado central</div></div>
+        <div class="col-2"><div class="caja">el lado derecho</div></div>
+      </div>
+      <!-- Fila 2: pie de página -->
+      <div class="row">
+        <div class="col-12"><div class="caja">Pie de página</div></div>
+      </div>
+    </div>
+
+    <hr class="my-4">
+
+    <!-- Tarea 4: formulario con correo, área de texto y botón de enviar -->
+    <h2 class="h4">Formulario</h2>
+    <form>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com">
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+
+  </div>
+
+  <!-- Tarea 1: JS de Bootstrap con CDN, al final del body (hace funcionar la "x" de la alerta y el menú) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
