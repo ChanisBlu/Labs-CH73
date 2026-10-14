@@ -1,0 +1,110 @@
+/* Chanis FX - AD-14 Refactorización del Blog con Bootstrap
+   Navbar, rejilla, tarjetas, textos y formulario usan clases de Bootstrap
+   (modo oscuro con data-bs-theme="dark").
+   Paleta de 5 colores: en lugar de inventar clases propias, se personalizan las
+   variables de Bootstrap (--bs-...) con los colores de la obra:
+   dark #121212 (fondo), light #ECE7DF (texto), secondary #C9C2B4 (textos secundarios),
+   danger #7A2420 (rojo óxido, acentos y botones) e info #7FA0B8 (azul hielo, detalles).
+   Un solo archivo de estilos para las 3 páginas. */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Google+Sans+Flex:wght@300;400;500;600&display=swap');
+
+/* ---------- TEMA: colores y fuentes de Bootstrap personalizados ---------- */
+[data-bs-theme="dark"] {
+  --bs-body-font-family: 'Google Sans Flex', system-ui, Arial, sans-serif;
+  --bs-body-bg: #121212;
+  --bs-body-bg-rgb: 18, 18, 18;
+  --bs-body-color: #ece7df;
+  --bs-body-color-rgb: 236, 231, 223;
+  --bs-tertiary-bg: #1b1a19;
+  --bs-tertiary-bg-rgb: 27, 26, 25;
+  --bs-border-color: #322f2b;
+  --bs-dark-rgb: 18, 18, 18;
+  --bs-secondary-rgb: 201, 194, 180;
+  --bs-danger-rgb: 163, 58, 51;
+  --bs-info-rgb: 127, 160, 184;
+  --bs-link-color: #7fa0b8;
+  --bs-link-color-rgb: 127, 160, 184;
+  --bs-link-hover-color: #a9c2d4;
+  --bs-link-hover-color-rgb: 169, 194, 212;
+  --bs-info-text-emphasis: #a9c2d4;
+  --bs-info-bg-subtle: #16212a;
+  --bs-info-border-subtle: #3b5466;
+}
+
+/* Títulos con la tipografía de antes */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.navbar-brand {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  letter-spacing: 0.3px;
+}
+
+/* Botón rojo óxido (Bootstrap define los colores del botón por separado) */
+.btn-danger {
+  --bs-btn-bg: #7a2420;
+  --bs-btn-border-color: #7a2420;
+  --bs-btn-hover-bg: #93312c;
+  --bs-btn-hover-border-color: #93312c;
+  --bs-btn-active-bg: #93312c;
+  --bs-btn-active-border-color: #93312c;
+}
+
+/* ---------- HERO (portada con imagen de fondo) ---------- */
+.hero-con-fondo {
+  padding: 110px 24px;
+  background-image: url('images/obras/triptico-jom.jpg');
+  background-size: cover;
+  background-position: center 30%;
+}
+
+/* Capa oscura encima de la imagen para que se lea el texto */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(var(--bs-dark-rgb), 0.88) 0%, rgba(var(--bs-dark-rgb), 0.7) 55%, rgba(var(--bs-dark-rgb), 0.92) 100%);
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-contenido .lead {
+  max-width: 620px;
+}
+
+/* ---------- TEXTOS ---------- */
+.letra-espaciada {
+  letter-spacing: 2px;
+}
+
+.aviso-contenido {
+  max-width: 620px;
+}
+
+/* ---------- FOTOS DE LAS OBRAS ---------- */
+.obra .card-img-top {
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Los tatuajes se ven completos, sin recortar */
+.obra.tatuaje .card-img-top {
+  height: 260px;
+  object-fit: contain;
+  background: var(--bs-body-bg);
+  padding: 10px;
+}
+
+.proceso-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero-con-fondo {
+    padding: 70px 16px;
+  }
+}
